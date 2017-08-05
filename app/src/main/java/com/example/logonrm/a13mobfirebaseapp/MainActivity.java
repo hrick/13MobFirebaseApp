@@ -21,7 +21,6 @@ public class MainActivity extends AppCompatActivity {
         firebaseAnalytics = FirebaseAnalytics.getInstance(this);
         setContentView(R.layout.activity_main);
         FirebaseMessaging.getInstance().subscribeToTopic("mob");
-        Fabric.with(this, new Crashlytics());
     }
 
     public void forcarCrash(View view) {
