@@ -1,11 +1,15 @@
 apply plugin: 'com.android.application'
+apply plugin: 'io.fabric'
 
+repositories {
+    maven { url 'https://maven.fabric.io/public' }
+}
 android {
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
     defaultConfig {
         applicationId "com.example.logonrm.a13mobfirebaseapp"
-        minSdkVersion 15
+        minSdkVersion 16
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
@@ -28,7 +32,9 @@ dependencies {
     compile 'com.google.firebase:firebase-core:9.6.1'
     compile 'com.google.firebase:firebase-messaging:9.6.1'
     testCompile 'junit:junit:4.12'
-
+    compile('com.crashlytics.sdk.android:crashlytics:2.6.8@aar') {
+        transitive = true;
+    }
 }
 // Add to the bottom of the file
 apply plugin: 'com.google.gms.google-services'

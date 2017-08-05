@@ -13,6 +13,7 @@ public class MeuFirebaseInstanceIdService extends FirebaseInstanceIdService {
 
     @Override
     public void onTokenRefresh() {
+        super.onTokenRefresh();
         String refreshedToken = FirebaseInstanceId.getInstance().getToken();
         sendRegistrationToService(refreshedToken);
     }
